@@ -5,7 +5,7 @@ const control = require('./controller');
 // const port = 4004
 
 app.use(express.static("public"));
-const path = require("path")
+const path = require("path");
 
 //middlewars
 app.use(express.json());
