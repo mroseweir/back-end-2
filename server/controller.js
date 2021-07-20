@@ -33,7 +33,7 @@ module.exports = {
         // console.log(typeof price)
         const newHouse = { id: houseId, address, price, imageURL }
         if (price === 0) {
-            res.status(400).send(alert("Houses aren't free!"))
+            res.status(400).send("Houses aren't free!")
             rollbar.error('Needs a price!')
         }
         houses.push(newHouse)
