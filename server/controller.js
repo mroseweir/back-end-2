@@ -6,15 +6,14 @@ let houseId = 4;
 module.exports = {
     getHouses: (req, res) => {
         res.status(200).send(houses);
-        rollbar.info('houses served succesfully')
     },
     deleteHouse: (req, res) => {
         const{ id } = req.params
-
+        
         const index = houses.findIndex(house => {
             return house.id === +id;
         });
-
+        
         if (id === -1) {
             res.status(400).send({error: 'there is no such id'})
         } else {
@@ -29,6 +28,7 @@ module.exports = {
         const newHouse = { id: houseId, address, price, imageURL }
         houses.push(newHouse)
         houseId++
+        rollbar.info('house added succesfully')
         res.status(200).send(houses)
     },
     updateHouse: (req, res) => {
