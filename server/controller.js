@@ -28,13 +28,12 @@ module.exports = {
         }
     },
     createHouse: (req, res) => {
-        console.log('success')
         let { address, price, imageURL } = req.body;
         price = +price
         // console.log(typeof price)
         const newHouse = { id: houseId, address, price, imageURL }
         if (price === 0) {
-            res.status(400).send("Houses aren't free!")
+            res.status(400).send(<h1>"Houses aren't free!"</h1>)
             rollbar.error('Needs a price!')
         }
         houses.push(newHouse)
