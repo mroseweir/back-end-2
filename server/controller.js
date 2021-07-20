@@ -1,10 +1,12 @@
 const { send } = require('process');
+const Rollbar = require('rollbar');
 const houses = require('./db.json')
 let houseId = 4;
 
 module.exports = {
     getHouses: (req, res) => {
         res.status(200).send(houses);
+        rollbar.info('houses served succesfully')
     },
     deleteHouse: (req, res) => {
         const{ id } = req.params
