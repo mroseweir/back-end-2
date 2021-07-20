@@ -28,6 +28,7 @@ module.exports = {
         }
     },
     createHouse: (req, res) => {
+        console.log('success')
         let { address, price, imageURL } = req.body;
         price = +price
         // console.log(typeof price)
@@ -39,7 +40,6 @@ module.exports = {
         houses.push(newHouse)
         houseId++
         res.status(200).send(houses)
-        console.log('success')
         rollbar.info('house added succesfully')
     },
     updateHouse: (req, res) => {
