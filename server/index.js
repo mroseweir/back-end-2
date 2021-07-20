@@ -9,7 +9,8 @@ const rollbar = new Rollbar({
     accessToken: 'e6362af4dd944f49b6dff5d54164ab3e',
     captureUncaught: true,
     captureUnhandledRejections: true
-})
+});
+rollbar.log('Hello World!')
 
 app.use(express.static("public"));
 const path = require("path");
