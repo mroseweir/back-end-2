@@ -28,8 +28,8 @@ module.exports = {
         const newHouse = { id: houseId, address, price, imageURL }
         houses.push(newHouse)
         houseId++
-        rollbar.info('house added succesfully')
         res.status(200).send(houses)
+        Rollbar.info('house added succesfully')
     },
     updateHouse: (req, res) => {
         const { id } = req.params;
