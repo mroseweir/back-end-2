@@ -11,7 +11,6 @@ const rollbar = new Rollbar({
     captureUnhandledRejections: true
 });
 rollbar.log('Hello World!')
-rollbar.info('test')
 
 app.use(express.static("public"));
 const path = require("path");
