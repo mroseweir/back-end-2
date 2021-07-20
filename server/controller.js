@@ -12,6 +12,7 @@ const rollbar = new Rollbar({
 module.exports = {
     getHouses: (req, res) => {
         res.status(200).send(houses);
+        rollbar.log('test2')
     },
     deleteHouse: (req, res) => {
         const{ id } = req.params
